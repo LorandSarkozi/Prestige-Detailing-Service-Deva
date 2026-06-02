@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Detailing & Service – Deva</title>
+  <meta name="description" content="Service auto premium în Deva. Diagnoză, geometrie roți, mecanică, electrică, cosmetică & polish. 4.6★ Google Rating, 277 recenzii." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --bg2:       #111111;
+      --bg3:       #1a1a1a;
+      --gold:      #c9a227;
+      --gold-lt:   #e0b93a;
+      --gold-dk:   #9e7d1a;
+      --gold-glow: rgba(201,162,39,.30);
+      --gold-glow2:rgba(201,162,39,.12);
+      --white:     #ffffff;
+      --gray:      #e0e0e0;
+      --gray2:     #aaaaaa;
+      --gray3:     #555555;
+      --border:    rgba(201,162,39,.20);
+      --r:         12px;
+      --r2:        20px;
+      --shadow:    0 8px 40px rgba(0,0,0,.60);
+      --shadow-g:  0 0 30px rgba(201,162,39,.25);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: .02em;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1200px, 94%); margin-inline: auto; }
+    .gold  { color: var(--gold); }
+    .sr-only { position: absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: .35em 1.1em;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .6rem;
+    }
+
+    .section-sub {
+      color: var(--gray2);
+      font-size: 1.05rem;
+      max-width: 540px;
+    }
+
+    .divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-block: 1.4rem;
+    }
+
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dk); border-radius: 4px; }
+
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.25rem 0;
+      transition: background .4s ease, backdrop-filter .4s ease, box-shadow .4s ease, padding .4s ease;
+    }
+
+    #navbar.scrolled {
+      background: rgba(10,10,10,.82);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      box-shadow: 0 2px 30px rgba(0,0,0,.55);
+      padding: .85rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .nav-logo .logo-main {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: .12em;
+      line-height: 1;
+    }
+    .nav-logo .logo-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      color: var(--gray2);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2.2rem;
+    }
+    .nav-links a {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gray);
+      position: relative;
+      transition: color .25s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width .3s ease;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg) !important;
+      padding: .45em 1.3em;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background .25s, transform .2s !important;
+    }
+    .nav-cta::after { display:none !important; }
+    .nav-cta:hover { background: var(--gold-lt) !important; transform: translateY(-1px); }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2.5rem;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease;
+    }
+    .mobile-menu.open {
+      display: flex; opacity: 1; pointer-events: all;
+    }
+    .mobile-menu a {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--white); transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding: 7rem 0 5rem;
+    }
+
+    /* animated gradient bg */
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(160deg, rgba(10,10,10,.93) 0%, rgba(10,10,10,.75) 50%, rgba(10,10,10,.88) 100%),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      animation: heroGrad 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGrad {
+      0%   { filter: brightness(1); }
+      50%  { filter: brightness(1.06); }
+      100% { filter: brightness(1); }
+    }
+
+    .hero-geo {
+      position: absolute; right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: min(620px, 58vw);
+      opacity: .045;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particles {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: floatP linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes floatP {
+      0%   { opacity: 0; transform: translateY(0) scale(.5); }
+      15%  { opacity: .6; }
+      85%  { opacity: .4; }
+      100% { opacity: 0; transform: translateY(-100vh) scale(1); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .78rem; font-weight: 600; letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: .4em 1.1em;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      background: rgba(201,162,39,.06);
+    }
+    .hero-badge::before {
+      content: '';
+      display: inline-block; width: 6px; height: 6px;
+      background: var(--gold); border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.2;} }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      line-height: 1.05;
+      margin-bottom: 1.4rem;
+    }
+    .hero-title span {
+      display: block;
+      background: linear-gradient(135deg, var(--gold-lt) 0%, var(--gold) 50%, var(--gold-dk) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: var(--gray2);
+      margin-bottom: 2.4rem;
+      font-weight: 300;
+      letter-spacing: .02em;
+    }
+
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+      color: #0a0a0a;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: .85em 2em;
+      border-radius: 4px;
+      border: none; cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(201,162,39,.35);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,162,39,.55);
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: .85em 2em;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.25);
+      cursor: pointer;
+      transition: border-color .25s, color .25s, transform .25s;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+    }
+    .stat-item {
+      display: flex; flex-direction: column;
+    }
+    .stat-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: .78rem; letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gray2);
+      margin-top: .2rem;
+    }
+    .stat-divider {
+      width: 1px; background: var(--gray3); align-self: stretch;
+    }
+
+    /* line decoration */
+    .hero-line {
+      position: absolute; left: 0; bottom: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services {
+      padding: 7rem 0;
+      background: var(--bg2);
+      position: relative; overflow: hidden;
+    }
+    #services::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .services-header { margin-bottom: 3.5rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .services-grid .service-card:last-child:nth-child(3n+1) {
+      grid-column: 2;
+    }
+
+    .service-card {
+      background: var(--bg3);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: var(--r);
+      padding: 2.2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,162,39,.06) 0%, transparent 60%);
+      opacity: 0; transition: opacity .3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 0 30px var(--gold-glow), var(--shadow);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 54px; height: 54px;
+      background: rgba(201,162,39,.1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.3rem;
+      transition: background .3s, box-shadow .3s;
+    }
+    .service-card:hover .service-icon {
+      background: rgba(201,162,39,.2);
+      box-shadow: 0 0 16px var(--gold-glow);
+    }
+
+    .service-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      letter-spacing: .04em; text-transform: uppercase;
+      margin-bottom: .5rem;
+      color: var(--white);
+    }
+    .service-desc {
+      font-size: .9rem;
+      color: var(--gray2);
+      line-height: 1.65;
+    }
+
+    .service-num {
+      position: absolute; top: 1.2rem; right: 1.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 3rem; font-weight: 700;
+      color: rgba(201,162,39,.06);
+      line-height: 1; pointer-events: none;
+      transition: color .3s;
+    }
+    .service-card:hover .service-num { color: rgba(201,162,39,.12); }
+
+    #why {
+      padding: 7rem 0;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .why-deco {
+      position: relative;
+      height: 460px;
+    }
+    .why-deco-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+    }
+    .why-deco-ring:nth-child(1) {
+      width: 420px; height: 420px;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: rotateSlow 30s linear infinite;
+    }
+    .why-deco-ring:nth-child(2) {
+      width: 290px; height: 290px;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      border-color: rgba(201,162,39,.3);
+      animation: rotateSlow 20s linear infinite reverse;
+    }
+    .why-deco-ring:nth-child(3) {
+      width: 160px; height: 160px;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      border-color: rgba(201,162,39,.5);
+    }
+    @keyframes rotateSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+    .why-deco-dot {
+      position: absolute;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+    /* dots on outer ring */
+    .deco-dot-t  { top: calc(50% - 210px); left: 50%; transform: translateX(-50%); }
+    .deco-dot-r  { top: 50%; right: calc(50% - 210px); transform: translateY(-50%); }
+    .deco-dot-b  { bottom: calc(50% - 210px); left: 50%; transform: translateX(-50%); }
+    .deco-dot-l  { top: 50%; left: calc(50% - 210px); transform: translateY(-50%); }
+
+    .why-deco-center {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 0 40px rgba(201,162,39,.5);
+    }
+
+    .why-features { display: flex; flex-direction: column; gap: 2rem; }
+
+    .why-item {
+      display: flex; align-items: flex-start; gap: 1.2rem;
+      padding: 1.5rem;
+      background: var(--bg3);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: var(--r);
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .why-item:hover {
+      border-color: var(--border);
+      box-shadow: 0 0 20px var(--gold-glow2);
+    }
+
+    .why-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: rgba(201,162,39,.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .why-text h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      margin-bottom: .3rem;
+    }
+    .why-text p {
+      font-size: .88rem; color: var(--gray2); line-height: 1.6;
+    }
+
+    #reviews {
+      padding: 7rem 0;
+      background: var(--bg2);
+      position: relative; overflow: hidden;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .google-badge {
+      display: inline-flex; align-items: center; gap: 1rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: .8rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .google-badge .gb-score {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .google-badge .gb-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: .05em; }
+    .google-badge .gb-count { font-size: .85rem; color: var(--gray2); }
+
+    .reviews-track-wrap {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .reviews-track {
+      display: flex;
+      transition: transform .55s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .review-card {
+      flex: 0 0 calc(33.333% - 1rem);
+      min-width: 0;
+      margin-right: 1.5rem;
+      background: var(--bg3);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: var(--r);
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: .9rem;
+    }
+
+    .rc-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: .05em; }
+    .rc-text {
+      font-size: .95rem; color: var(--gray);
+      line-height: 1.7; font-style: italic;
+      flex: 1;
+    }
+    .rc-text::before { content: '\201C'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -.3em; margin-right: .2em; }
+    .rc-text::after  { content: '\201D'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -.3em; margin-left: .2em; }
+
+    .rc-author {
+      display: flex; align-items: center; gap: .85rem;
+      margin-top: .3rem;
+    }
+    .rc-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--bg);
+      flex-shrink: 0;
+    }
+    .rc-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600; font-size: 1rem;
+      letter-spacing: .04em;
+    }
+    .rc-src { font-size: .78rem; color: var(--gray3); }
+
+    .reviews-nav {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.2rem; margin-top: 2.5rem;
+    }
+    .rev-btn {
+      width: 44px; height: 44px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); cursor: pointer;
+      transition: background .25s, box-shadow .25s;
+      font-size: 1.2rem;
+    }
+    .rev-btn:hover {
+      background: rgba(201,162,39,.15);
+      box-shadow: 0 0 16px var(--gold-glow);
+    }
+
+    .rev-dots { display: flex; gap: .5rem; }
+    .rev-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gray3); cursor: pointer;
+      transition: background .25s, transform .25s;
+    }
+    .rev-dot.active { background: var(--gold); transform: scale(1.3); }
+
+    #contact {
+      padding: 7rem 0;
+      background: var(--bg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+    }
+    .contact-info > p {
+      color: var(--gray2); font-size: .95rem; margin-bottom: 2.2rem;
+    }
+
+    .ci-list { display: flex; flex-direction: column; gap: 1.3rem; }
+
+    .ci-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .ci-icon-wrap {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      background: rgba(201,162,39,.1);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .ci-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .15rem;
+    }
+    .ci-val {
+      font-size: .9rem; color: var(--gray); line-height: 1.55;
+    }
+    .ci-val a { color: var(--gray); transition: color .2s; }
+    .ci-val a:hover { color: var(--gold); }
+
+    /* map placeholder */
+    .map-wrap {
+      margin-top: 2rem;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* contact form */
+    .contact-form-wrap {
+      background: var(--bg3);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--r2);
+      padding: 2.5rem;
+    }
+
+    .contact-form-wrap h3 {
+      font-size: 1.7rem; margin-bottom: .4rem;
+    }
+    .contact-form-wrap > p {
+      color: var(--gray2); font-size: .9rem; margin-bottom: 2rem;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.1rem; }
+
+    .form-group label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gray2);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 6px;
+      padding: .75em 1em;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray3); }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group select option { background: var(--bg2); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-glow2);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+      color: var(--bg);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: .9em 2em;
+      border: none; border-radius: 6px; cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(201,162,39,.35);
+      margin-top: .5rem;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,162,39,.5);
+    }
+
+    /* form success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .form-success .fs-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.5rem; color: var(--gold); margin-bottom: .5rem;
+    }
+    .form-success p { color: var(--gray2); }
+
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 3.5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo-main {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.55rem; font-weight: 700;
+      color: var(--gold); letter-spacing: .12em;
+    }
+    .footer-brand .logo-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .68rem; font-weight: 500;
+      letter-spacing: .22em; color: var(--gray2);
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-style: italic;
+      color: var(--gray2);
+      font-size: .88rem;
+      line-height: 1.65;
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-col h5 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .85rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: .65rem; }
+    .footer-col ul li a {
+      font-size: .9rem; color: var(--gray2);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+
+    .social-links {
+      display: flex; gap: .75rem; margin-top: .5rem;
+    }
+    .social-link {
+      width: 38px; height: 38px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray2); font-size: 1rem;
+      transition: background .25s, color .25s, border-color .25s;
+    }
+    .social-link:hover {
+      background: rgba(201,162,39,.15);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: .82rem; color: var(--gray3);
+    }
+    .footer-bottom a { color: var(--gold); transition: color .2s; }
+    .footer-bottom a:hover { color: var(--gold-lt); }
+
+    #gallery {
+      padding: 7rem 0;
+      background: var(--bg);
+      position: relative; overflow: hidden;
+    }
+    #gallery::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .gallery-header { margin-bottom: 3rem; text-align: center; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.05);
+      cursor: pointer;
+      aspect-ratio: 16/10;
+    }
+    .gallery-item.tall { grid-row: span 2; aspect-ratio: unset; }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease, filter .6s ease;
+      filter: brightness(.85) saturate(1.1);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.07);
+      filter: brightness(1) saturate(1.25);
+    }
+
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .4s ease;
+      display: flex; align-items: flex-end; padding: 1.2rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-overlay span {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .85rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: .3em .9em; border-radius: 50px;
+      background: rgba(0,0,0,.4);
+    }
+
+    /* gold corner accent on hover */
+    .gallery-item::after {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 40px; height: 40px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+      border-radius: var(--r) 0 0 0;
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item.tall { grid-row: span 1; aspect-ratio: 16/10; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    #scroll-top {
+      position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 900;
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border: none; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bg); font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0; pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity .3s, transform .3s, box-shadow .3s;
+      box-shadow: 0 4px 20px rgba(201,162,39,.45);
+    }
+    #scroll-top.show { opacity: 1; pointer-events: all; transform: translateY(0); }
+    #scroll-top:hover { box-shadow: 0 6px 28px rgba(201,162,39,.6); }
+
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid .service-card:last-child:nth-child(3n+1) { grid-column: auto; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-deco { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .review-card { flex: 0 0 calc(50% - .75rem); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .review-card { flex: 0 0 calc(100% - .75rem); }
+      .hero-stats { gap: 1.2rem; }
+      .stat-divider { display: none; }
+      .why-deco { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .btn-gold, .btn-outline { width: 100%; justify-content: center; }
+      .google-badge { flex-direction: column; text-align: center; gap: .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" aria-label="Navigare principală">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Prestige Detailing & Service - Acasă">
+        <span class="logo-main">PRESTIGE</span>
+        <span class="logo-sub">Detailing &amp; Service</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#hero">Acasă</a></li>
+        <li><a href="#services">Servicii</a></li>
+        <li><a href="#why">Despre Noi</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#reviews">Recenzii</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Deschide meniu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Meniu mobil">
+    <a href="#hero"     id="mm-home">Acasă</a>
+    <a href="#services" id="mm-srv">Servicii</a>
+    <a href="#why"      id="mm-why">Despre Noi</a>
+    <a href="#gallery"  id="mm-gal">Galerie</a>
+    <a href="#reviews"  id="mm-rev">Recenzii</a>
+    <a href="#contact"  id="mm-con">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero" aria-label="Secțiune principală">
+    <div class="hero-bg"></div>
+
+    <!-- particles -->
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- geometric car silhouette (SVG) -->
+    <svg class="hero-geo" aria-hidden="true" viewBox="0 0 900 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- simplified luxury sedan silhouette with geometric lines -->
+      <path d="M50 260 L80 260 Q90 200 130 180 L280 155 Q340 100 460 88 Q580 76 650 90 L750 130 Q800 145 820 180 Q840 200 840 230 L860 260 Z"
+            stroke="white" stroke-width="2" fill="none" opacity=".6"/>
+      <!-- roof line -->
+      <path d="M280 155 Q360 80 500 72 Q600 65 680 85 L750 130"
+            stroke="white" stroke-width="1.5" fill="none" opacity=".4"/>
+      <!-- windows -->
+      <path d="M295 152 Q340 95 430 82 L520 78 L520 150 Z"
+            stroke="white" stroke-width="1" fill="none" opacity=".3"/>
+      <path d="M525 78 Q610 72 660 88 L720 125 L525 148 Z"
+            stroke="white" stroke-width="1" fill="none" opacity=".3"/>
+      <!-- wheels -->
+      <circle cx="195" cy="262" r="52" stroke="white" stroke-width="1.5" fill="none" opacity=".5"/>
+      <circle cx="195" cy="262" r="30" stroke="white" stroke-width="1" fill="none" opacity=".3"/>
+      <circle cx="195" cy="262" r="8" fill="white" opacity=".3"/>
+      <circle cx="695" cy="262" r="52" stroke="white" stroke-width="1.5" fill="none" opacity=".5"/>
+      <circle cx="695" cy="262" r="30" stroke="white" stroke-width="1" fill="none" opacity=".3"/>
+      <circle cx="695" cy="262" r="8" fill="white" opacity=".3"/>
+      <!-- wheel spokes -->
+      <line x1="195" y1="210" x2="195" y2="232" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="195" y1="292" x2="195" y2="314" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="143" y1="262" x2="165" y2="262" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="225" y1="262" x2="247" y2="262" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="695" y1="210" x2="695" y2="232" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="695" y1="292" x2="695" y2="314" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="643" y1="262" x2="665" y2="262" stroke="white" stroke-width=".8" opacity=".25"/>
+      <line x1="725" y1="262" x2="747" y2="262" stroke="white" stroke-width=".8" opacity=".25"/>
+      <!-- ground line -->
+      <line x1="0" y1="314" x2="900" y2="314" stroke="white" stroke-width=".5" opacity=".15"/>
+      <!-- headlights -->
+      <path d="M840 180 L860 175 L870 200 L850 205 Z" stroke="white" stroke-width="1" fill="none" opacity=".4"/>
+      <!-- tail lights -->
+      <path d="M80 190 L55 185 L50 210 L75 212 Z" stroke="white" stroke-width="1" fill="none" opacity=".4"/>
+      <!-- decorative lines -->
+      <line x1="300" y1="155" x2="730" y2="130" stroke="white" stroke-width=".5" opacity=".15"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Service Auto Premium &mdash; Deva, România</div>
+
+        <h1 class="hero-title">
+          EXCELENȚĂ<br>
+          <span>ÎN FIECARE</span>
+          DETALIU
+        </h1>
+
+        <p class="hero-sub">Service auto premium în Deva. Calitate superioară,<br>echipamente moderne, specialiști dedicați.</p>
+
+        <div class="hero-btns">
+          <a href="#contact" class="btn-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+            Programează-te Acum
+          </a>
+          <a href="#services" class="btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Serviciile Noastre
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">277</span>
+            <span class="stat-lbl">Recenzii Google</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num">4.6<span style="color:var(--gold-dk);font-size:1.1rem">★</span></span>
+            <span class="stat-lbl">Rating Mediu</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num">10+</span>
+            <span class="stat-lbl">Ani Experiență</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-line" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section id="services" aria-labelledby="srv-title">
+    <div class="container">
+      <div class="services-header fade-in">
+        <span class="section-label">Ce Oferim</span>
+        <h2 class="section-title" id="srv-title">Serviciile <span class="gold">Noastre</span></h2>
+        <p class="section-sub">Soluții complete pentru automobilul tău, realizate cu echipamente de ultimă generație și personal calificat.</p>
+        <div class="divider" aria-hidden="true"></div>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1 -->
+        <article class="service-card fade-in" style="--delay:.05s">
+          <span class="service-num" aria-hidden="true">01</span>
+          <div class="service-icon" aria-hidden="true">🔍</div>
+          <h3 class="service-title">Diagnoză Auto</h3>
+          <p class="service-desc">Verificare electronică avansată cu echipamente OBD profesionale. Identificăm orice problemă rapid și precis.</p>
+        </article>
+
+        <!-- 2 -->
+        <article class="service-card fade-in" style="--delay:.10s">
+          <span class="service-num" aria-hidden="true">02</span>
+          <div class="service-icon" aria-hidden="true">⚙️</div>
+          <h3 class="service-title">Geometrie Roți</h3>
+          <p class="service-desc">Reglaj precis al geometriei cu echipamente moderne 3D. Siguranță maximă și uzură uniformă a anvelopelor.</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="service-card fade-in" style="--delay:.15s">
+          <span class="service-num" aria-hidden="true">03</span>
+          <div class="service-icon" aria-hidden="true">🔧</div>
+          <h3 class="service-title">Mecanică Generală</h3>
+          <p class="service-desc">Reparații complete, de la schimburi de ulei la revizie generală. Lucrăm cu piese de calitate certificată.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="service-card fade-in" style="--delay:.20s">
+          <span class="service-num" aria-hidden="true">04</span>
+          <div class="service-icon" aria-hidden="true">⚡</div>
+          <h3 class="service-title">Electrică Auto</h3>
+          <p class="service-desc">Diagnosticare și reparații electrice complete. Rezolvăm orice defecțiune la instalația electrică a vehiculului.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="service-card fade-in" style="--delay:.25s">
+          <span class="service-num" aria-hidden="true">05</span>
+          <div class="service-icon" aria-hidden="true">🛢️</div>
+          <h3 class="service-title">Ulei Cutie Automată</h3>
+          <p class="service-desc">Schimb și verificare profesională a uleiului de transmisie automată. Prelungim durata de viață a cutiei.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="service-card fade-in" style="--delay:.30s">
+          <span class="service-num" aria-hidden="true">06</span>
+          <div class="service-icon" aria-hidden="true">❄️</div>
+          <h3 class="service-title">Încărcare Climatizare</h3>
+          <p class="service-desc">Verificare, încărcare freon și igienizare completă a sistemului de climatizare. Confort maxim în orice anotimp.</p>
+        </article>
+
+        <!-- 7 – centered last -->
+        <article class="service-card fade-in" style="--delay:.35s">
+          <span class="service-num" aria-hidden="true">07</span>
+          <div class="service-icon" aria-hidden="true">✨</div>
+          <h3 class="service-title">Cosmetică & Polish</h3>
+          <p class="service-desc">Detailing profesional complet — polish, ceruire, protecție ceramică. Mașina ta, impecabilă ca din fabrică.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="why-grid">
+
+        <!-- decorative element -->
+        <div class="why-deco fade-in" aria-hidden="true">
+          <div class="why-deco-ring"></div>
+          <div class="why-deco-ring"></div>
+          <div class="why-deco-ring"></div>
+          <div class="why-deco-dot deco-dot-t"></div>
+          <div class="why-deco-dot deco-dot-r"></div>
+          <div class="why-deco-dot deco-dot-b"></div>
+          <div class="why-deco-dot deco-dot-l"></div>
+          <div class="why-deco-center">🏆</div>
+        </div>
+
+        <!-- features -->
+        <div>
+          <div class="fade-in">
+            <span class="section-label">Avantajele Noastre</span>
+            <h2 class="section-title" id="why-title">De Ce Să <span class="gold">Ne Alegi</span></h2>
+            <p class="section-sub">Combinăm experiența cu tehnologia pentru a oferi servicii auto de excepție în județul Hunedoara.</p>
+            <div class="divider" aria-hidden="true"></div>
+          </div>
+
+          <div class="why-features">
+
+            <div class="why-item fade-in">
+              <div class="why-icon" aria-hidden="true">🔬</div>
+              <div class="why-text">
+                <h4>Echipamente Profesionale</h4>
+                <p>Investim constant în tehnologie de ultimă generație pentru diagnoze precise și intervenții de calitate superioară.</p>
+              </div>
+            </div>
+
+            <div class="why-item fade-in">
+              <div class="why-icon" aria-hidden="true">👨‍🔧</div>
+              <div class="why-text">
+                <h4>Specialiști Experimentați</h4>
+                <p>Echipa noastră are peste 10 ani de experiență în service auto și participă regulat la cursuri de specializare.</p>
+              </div>
+            </div>
+
+            <div class="why-item fade-in">
+              <div class="why-icon" aria-hidden="true">🛡️</div>
+              <div class="why-text">
+                <h4>Service de Încredere</h4>
+                <p>Transparență totală în privința lucrărilor și prețurilor. Nicio surpriză neplăcută — îți respectăm bugetul.</p>
+              </div>
+            </div>
+
+            <div class="why-item fade-in">
+              <div class="why-icon" aria-hidden="true">⭐</div>
+              <div class="why-text">
+                <h4>Clienți Mulțumiți</h4>
+                <p>277 recenzii Google cu o medie de 4.6 stele vorbesc de la sine. Satisfacția ta este prioritatea noastră.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="gallery-header fade-in">
+        <span class="section-label">Galerie Foto</span>
+        <h2 class="section-title" id="gallery-title">Mașini <span class="gold">Tratate cu Grijă</span></h2>
+        <div class="divider" style="margin-inline:auto" aria-hidden="true"></div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- tall left feature image -->
+        <div class="gallery-item tall fade-in">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"
+               alt="BMW M4 detaliu lateral" loading="lazy" />
+          <div class="gallery-overlay"><span>Detailing Exterior</span></div>
+        </div>
+
+        <!-- top-right 1 -->
+        <div class="gallery-item fade-in" style="--delay:.05s">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80"
+               alt="Polish profesional auto" loading="lazy" />
+          <div class="gallery-overlay"><span>Polish & Ceruire</span></div>
+        </div>
+
+        <!-- top-right 2 -->
+        <div class="gallery-item fade-in" style="--delay:.10s">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80"
+               alt="Masina sport detaliu" loading="lazy" />
+          <div class="gallery-overlay"><span>Sport & Luxury</span></div>
+        </div>
+
+        <!-- bottom-right 1 -->
+        <div class="gallery-item fade-in" style="--delay:.15s">
+          <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80"
+               alt="Interior auto curatat" loading="lazy" />
+          <div class="gallery-overlay"><span>Cosmetică Interior</span></div>
+        </div>
+
+        <!-- bottom-right 2 -->
+        <div class="gallery-item fade-in" style="--delay:.20s">
+          <img src="https://images.unsplash.com/photo-1600706432502-77a0e2e32790?auto=format&fit=crop&w=800&q=80"
+               alt="Masina curatata la service" loading="lazy" />
+          <div class="gallery-overlay"><span>Igienizare & Curățare</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS
+  ============================================================ -->
+  <section id="reviews" aria-labelledby="rev-title">
+    <div class="container">
+      <div class="reviews-header fade-in">
+        <span class="section-label">Recenzii Clienți</span>
+        <h2 class="section-title" id="rev-title">Ce Spun <span class="gold">Clienții Noștri</span></h2>
+        <div class="divider" style="margin-inline:auto" aria-hidden="true"></div>
+        <div class="google-badge" role="img" aria-label="Rating Google: 4.6 din 5, 277 recenzii">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <div>
+            <div class="gb-score">4.6</div>
+            <div class="gb-stars">★★★★★</div>
+          </div>
+          <div class="gb-count">277 recenzii<br>verificate Google</div>
+        </div>
+      </div>
+
+      <div class="reviews-track-wrap fade-in">
+        <div class="reviews-track" id="reviewsTrack" role="list">
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Recomand cu încredere prestige detailing service un service foarte bine pregătit care dă dovadă de seriozitate și prestație rar întâlnită.</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">IR</div>
+              <div>
+                <div class="rc-name">Ionuț Remus</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Aici vin de fiecare dată când am probleme la mașina, raportul preț calitate este foarte bun iar personalul este amabil și comunicativ.</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">CG</div>
+              <div>
+                <div class="rc-name">Cristina-Gabriela</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Am avut parte de profesionalism și seriozitate. Prețurile au fost accesibile și băieții chiar au știut ce fac.</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">GL</div>
+              <div>
+                <div class="rc-name">Gabriel Lupașcu</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Super profesional, raport preț calitate 10+ recomand cu toată încrederea.</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">RM</div>
+              <div>
+                <div class="rc-name">Robert Mihai</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Am avut o experiență foarte bună, personalul este prietenos iar prețurile mi se par corecte. Mașina e ca nouă!!!</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">RA</div>
+              <div>
+                <div class="rc-name">Raluca Andreea</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card" role="listitem">
+            <div class="rc-stars" aria-label="5 stele">★★★★★</div>
+            <p class="rc-text">Am fost servită cu cea mai mare promptitudine de către meșteri profesioniști, serioși, foarte săritori și amabili, într-un service foarte modern.</p>
+            <div class="rc-author">
+              <div class="rc-avatar" aria-hidden="true">Mi</div>
+              <div>
+                <div class="rc-name">Minodora</div>
+                <div class="rc-src">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="reviews-nav fade-in" aria-label="Navigare recenzii">
+        <button class="rev-btn" id="revPrev" aria-label="Recenzie anterioară">&#8592;</button>
+        <div class="rev-dots" id="revDots" role="tablist" aria-label="Selectează recenzie"></div>
+        <button class="rev-btn" id="revNext" aria-label="Recenzie următoare">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;margin-bottom:3.5rem">
+        <span class="section-label">Contactează-ne</span>
+        <h2 class="section-title" id="contact-title">Vino La <span class="gold">Noi</span></h2>
+        <p class="section-sub" style="margin-inline:auto">Programează-te online sau contactează-ne direct. Suntem gata să îngrijim automobilul tău.</p>
+        <div class="divider" style="margin-inline:auto" aria-hidden="true"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- left: info -->
+        <div class="contact-info fade-in">
+          <h3>Informații <span class="gold">Contact</span></h3>
+          <p>Suntem la dispoziția ta de luni până sâmbătă.</p>
+
+          <div class="ci-list">
+
+            <div class="ci-item">
+              <div class="ci-icon-wrap" aria-hidden="true">📍</div>
+              <div>
+                <div class="ci-label">Adresă</div>
+                <div class="ci-val">Calea Zarandului 146A<br>330182 Deva, România</div>
+              </div>
+            </div>
+
+            <div class="ci-item">
+              <div class="ci-icon-wrap" aria-hidden="true">📞</div>
+              <div>
+                <div class="ci-label">Telefon</div>
+                <div class="ci-val">
+                  <a href="tel:0749152782">0749 152 782</a><br>
+                  <a href="tel:+40722762105">+40 722 762 105</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="ci-item">
+              <div class="ci-icon-wrap" aria-hidden="true">✉️</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-val"><a href="mailto:transmvl@gmail.com">transmvl@gmail.com</a></div>
+              </div>
+            </div>
+
+            <div class="ci-item">
+              <div class="ci-icon-wrap" aria-hidden="true">🕐</div>
+              <div>
+                <div class="ci-label">Program</div>
+                <div class="ci-val">
+                  Luni – Vineri: <strong>09:00 – 17:00</strong><br>
+                  Sâmbătă: <strong>09:00 – 14:00</strong><br>
+                  <span style="color:var(--gray3)">Duminică: Închis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ci-item">
+              <div class="ci-icon-wrap" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Social Media</div>
+                <div class="ci-val">
+                  <a href="https://www.facebook.com/PrestigeDetailingService" target="_blank" rel="noopener noreferrer">Facebook</a>
+                  &nbsp;·&nbsp;
+                  <a href="https://www.instagram.com/prestige_detailing_service/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- map embed -->
+          <div class="map-wrap">
+            <iframe
+              src="https://maps.google.com/maps?q=Calea+Zarandului+146A,+Deva,+Romania&output=embed&z=16"
+              width="100%" height="260" style="border:0;display:block;"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Locație Prestige Detailing & Service pe Google Maps">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- right: form -->
+        <div class="contact-form-wrap fade-in">
+          <h3>Trimite un <span class="gold">Mesaj</span></h3>
+          <p>Completează formularul și te contactăm în cel mai scurt timp.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Nume *</label>
+                <input type="text" id="f-name" name="name" placeholder="Numele tău" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="f-phone">Telefon *</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="07xx xxx xxx" required autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-service">Serviciu dorit</label>
+              <select id="f-service" name="service">
+                <option value="">— Selectează un serviciu —</option>
+                <option value="diagnoza">Diagnoză Auto</option>
+                <option value="geometrie">Geometrie Roți</option>
+                <option value="mecanica">Mecanică Generală</option>
+                <option value="electrica">Electrică Auto</option>
+                <option value="ulei-cutie">Ulei Cutie Automată</option>
+                <option value="climatizare">Încărcare Climatizare</option>
+                <option value="cosmetica">Cosmetică &amp; Polish</option>
+                <option value="altul">Altul</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="f-msg">Mesaj</label>
+              <textarea id="f-msg" name="message" placeholder="Descrie pe scurt problema sau serviciul dorit..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Trimite pe WhatsApp
+              <svg style="display:inline;margin-left:.5rem" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.418A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+            </button>
+          </form>
+
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+            <div class="fs-icon">💬</div>
+            <h4>WhatsApp Deschis!</h4>
+            <p>Mesajul tău a fost pregătit. Apasă trimite în WhatsApp și te contactăm în curând!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo-main">PRESTIGE</div>
+          <div class="logo-sub">Detailing &amp; Service</div>
+          <p class="footer-tagline">"If you think it's expensive to hire a professional detailer... wait until you hire a cheap one."</p>
+          <div class="social-links" style="margin-top:1.5rem">
+            <a href="https://www.facebook.com/PrestigeDetailingService" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook Prestige Detailing & Service">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/prestige_detailing_service/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Prestige Detailing & Service">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigare</h5>
+          <ul>
+            <li><a href="#hero">Acasă</a></li>
+            <li><a href="#services">Servicii</a></li>
+            <li><a href="#why">Despre Noi</a></li>
+            <li><a href="#reviews">Recenzii</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Servicii</h5>
+          <ul>
+            <li><a href="#services">Diagnoză Auto</a></li>
+            <li><a href="#services">Geometrie Roți</a></li>
+            <li><a href="#services">Mecanică Generală</a></li>
+            <li><a href="#services">Electrică Auto</a></li>
+            <li><a href="#services">Cosmetică &amp; Polish</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Prestige Detailing &amp; Service. Toate drepturile rezervate.</p>
+        <p>Calea Zarandului 146A, Deva &mdash; <a href="tel:0749152782">0749 152 782</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scroll to top -->
+  <button id="scroll-top" aria-label="Înapoi sus">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---- NAVBAR SCROLL ---- */
+    var navbar = document.getElementById('navbar');
+    var scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+        scrollTopBtn.classList.add('show');
+      } else {
+        navbar.classList.remove('scrolled');
+        scrollTopBtn.classList.remove('show');
+      }
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ---- HAMBURGER MENU ---- */
+    var hamburger  = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function () {
+      if (mobileMenu.classList.contains('open')) closeMenu();
+      else openMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    /* ---- PARTICLES ---- */
+    var pContainer = document.getElementById('particles');
+    var particleCount = 28;
+
+    for (var i = 0; i < particleCount; i++) {
+      (function () {
+        var p = document.createElement('div');
+        p.className = 'particle';
+        var size = Math.random() * 3 + 1;
+        p.style.cssText = [
+          'width:'  + size + 'px',
+          'height:' + size + 'px',
+          'left:'   + (Math.random() * 100) + '%',
+          'bottom:' + (Math.random() * 30)  + '%',
+          'animation-duration:' + (Math.random() * 12 + 8) + 's',
+          'animation-delay:'    + (Math.random() * 10)     + 's',
+        ].join(';');
+        pContainer.appendChild(p);
+      })();
+    }
+
+    /* ---- INTERSECTION OBSERVER (fade-in) ---- */
+    var fadeEls = document.querySelectorAll('.fade-in');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.style.getPropertyValue('--delay') || '0s';
+          setTimeout(function () {
+            el.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(function (el) { observer.observe(el); });
+
+    /* ---- REVIEWS CAROUSEL ---- */
+    var track      = document.getElementById('reviewsTrack');
+    var cards      = track ? track.querySelectorAll('.review-card') : [];
+    var dotsWrap   = document.getElementById('revDots');
+    var btnPrev    = document.getElementById('revPrev');
+    var btnNext    = document.getElementById('revNext');
+    var totalCards = cards.length;
+    var currentIdx = 0;
+    var autoTimer  = null;
+    var visibleCount = 3;
+
+    function getVisible() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      var count = totalCards - visibleCount + 1;
+      for (var i = 0; i < count; i++) {
+        var d = document.createElement('button');
+        d.className = 'rev-dot' + (i === currentIdx ? ' active' : '');
+        d.setAttribute('role', 'tab');
+        d.setAttribute('aria-label', 'Recenzie ' + (i + 1));
+        d.setAttribute('aria-selected', i === currentIdx ? 'true' : 'false');
+        (function (idx) {
+          d.addEventListener('click', function () { goTo(idx); });
+        })(i);
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function goTo(idx) {
+      visibleCount = getVisible();
+      var maxIdx = Math.max(0, totalCards - visibleCount);
+      currentIdx = Math.max(0, Math.min(idx, maxIdx));
+
+      var cardWidth  = cards[0] ? cards[0].offsetWidth + 24 : 0; // 24 = margin-right gap
+      track.style.transform = 'translateX(-' + (currentIdx * cardWidth) + 'px)';
+
+      dotsWrap.querySelectorAll('.rev-dot').forEach(function (d, i) {
+        d.classList.toggle('active', i === currentIdx);
+        d.setAttribute('aria-selected', i === currentIdx ? 'true' : 'false');
+      });
+    }
+
+    function next() {
+      visibleCount = getVisible();
+      var maxIdx = Math.max(0, totalCards - visibleCount);
+      goTo(currentIdx >= maxIdx ? 0 : currentIdx + 1);
+    }
+    function prev() {
+      visibleCount = getVisible();
+      var maxIdx = Math.max(0, totalCards - visibleCount);
+      goTo(currentIdx <= 0 ? maxIdx : currentIdx - 1);
+    }
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(next, 5000);
+    }
+    function stopAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+    }
+
+    function initCarousel() {
+      visibleCount = getVisible();
+      buildDots();
+      goTo(0);
+      startAuto();
+    }
+
+    if (btnNext) btnNext.addEventListener('click', function () { stopAuto(); next(); startAuto(); });
+    if (btnPrev) btnPrev.addEventListener('click', function () { stopAuto(); prev(); startAuto(); });
+
+    // pause on hover
+    if (track) {
+      track.parentElement.addEventListener('mouseenter', stopAuto);
+      track.parentElement.addEventListener('mouseleave', startAuto);
+    }
+
+    // touch swipe
+    var touchStartX = 0;
+    if (track) {
+      track.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          stopAuto();
+          if (diff > 0) next(); else prev();
+          startAuto();
+        }
+      }, { passive: true });
+    }
+
+    window.addEventListener('resize', function () {
+      initCarousel();
+    });
+
+    initCarousel();
+
+    /* ---- CONTACT FORM ---- */
+    var form    = document.getElementById('contactForm');
+    var success = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name  = document.getElementById('f-name').value.trim();
+        var phone = document.getElementById('f-phone').value.trim();
+
+        if (!name || !phone) {
+          alert('Te rugăm să completezi câmpurile obligatorii (Nume și Telefon).');
+          return;
+        }
+
+        // Build mailto link as fallback
+        var service = document.getElementById('f-service').value;
+        var msg     = document.getElementById('f-msg').value.trim();
+        var body = 'Bună ziua! Mă numesc ' + name + ', numărul meu de telefon este ' + phone + '.'
+                 + (service ? ' Doresc serviciul: ' + service + '.' : '')
+                 + (msg ? ' ' + msg : '');
+        window.open('https://wa.me/40749152782?text=' + encodeURIComponent(body), '_blank');
+
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      });
+    }
+
+    /* ---- ACTIVE NAV LINK on scroll ---- */
+    var sections = document.querySelectorAll('section[id]');
+    var navAs    = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', function () {
+      var scrollY = window.pageYOffset;
+      sections.forEach(function (sec) {
+        var top    = sec.offsetTop - 100;
+        var height = sec.offsetHeight;
+        var id     = sec.getAttribute('id');
+        if (scrollY >= top && scrollY < top + height) {
+          navAs.forEach(function (a) {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + id) a.classList.add('active');
+          });
+        }
+      });
+    }, { passive: true });
+
+  })();
+  </script>
+
+</body>
+</html>

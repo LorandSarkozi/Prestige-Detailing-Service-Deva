@@ -119,7 +119,13 @@
     }
 
     .nav-logo {
-      display: flex; flex-direction: column; gap: 0;
+      display: flex; align-items: center;
+    }
+    .nav-logo-img {
+      height: 90px;
+      width: auto;
+      display: block;
+      filter: brightness(1.2);
     }
     .nav-logo .logo-main {
       font-family: 'Rajdhani', sans-serif;
@@ -1002,6 +1008,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .nav-logo-img { height: 70px; }
 
       .services-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -1017,6 +1024,7 @@
       .hero-btns { flex-direction: column; }
       .btn-gold, .btn-outline { width: 100%; justify-content: center; }
       .google-badge { flex-direction: column; text-align: center; gap: .5rem; }
+      .nav-logo-img { height: 56px; }
     }
   </style>
 </head>
@@ -1025,8 +1033,7 @@
   <nav id="navbar" aria-label="Navigare principală">
     <div class="container nav-inner">
       <a href="#hero" class="nav-logo" aria-label="Prestige Detailing & Service - Acasă">
-        <span class="logo-main">PRESTIGE</span>
-        <span class="logo-sub">Detailing &amp; Service</span>
+        <img src="images/logo-01.png" alt="Prestige Detailing & Service" class="nav-logo-img">
       </a>
 
       <ul class="nav-links" role="list">

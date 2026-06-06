@@ -492,7 +492,7 @@
 
     .why-deco {
       position: relative;
-      height: 460px;
+      height: 600px;
     }
     .why-deco-ring {
       position: absolute;
@@ -500,18 +500,18 @@
       border: 1px solid var(--border);
     }
     .why-deco-ring:nth-child(1) {
-      width: 420px; height: 420px;
+      width: 560px; height: 560px;
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       animation: rotateSlow 30s linear infinite;
     }
     .why-deco-ring:nth-child(2) {
-      width: 290px; height: 290px;
+      width: 400px; height: 400px;
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       border-color: rgba(201,162,39,.3);
       animation: rotateSlow 20s linear infinite reverse;
     }
     .why-deco-ring:nth-child(3) {
-      width: 160px; height: 160px;
+      width: 230px; height: 230px;
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       border-color: rgba(201,162,39,.5);
     }
@@ -525,20 +525,25 @@
       box-shadow: 0 0 10px var(--gold-glow);
     }
     /* dots on outer ring */
-    .deco-dot-t  { top: calc(50% - 210px); left: 50%; transform: translateX(-50%); }
-    .deco-dot-r  { top: 50%; right: calc(50% - 210px); transform: translateY(-50%); }
-    .deco-dot-b  { bottom: calc(50% - 210px); left: 50%; transform: translateX(-50%); }
-    .deco-dot-l  { top: 50%; left: calc(50% - 210px); transform: translateY(-50%); }
+    .deco-dot-t  { top: calc(50% - 280px); left: 50%; transform: translateX(-50%); }
+    .deco-dot-r  { top: 50%; right: calc(50% - 280px); transform: translateY(-50%); }
+    .deco-dot-b  { bottom: calc(50% - 280px); left: 50%; transform: translateX(-50%); }
+    .deco-dot-l  { top: 50%; left: calc(50% - 280px); transform: translateY(-50%); }
 
     .why-deco-center {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      width: 80px; height: 80px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(201,162,39,.15) 0%, transparent 70%);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      box-shadow: 0 0 40px rgba(201,162,39,.5);
+      box-shadow: 0 0 40px rgba(201,162,39,.4);
+    }
+    .why-deco-logo {
+      width: 150px;
+      height: auto;
+      display: block;
+      filter: brightness(1.15) drop-shadow(0 0 12px rgba(201,162,39,.6));
     }
 
     .why-features { display: flex; flex-direction: column; gap: 2rem; }
@@ -1242,7 +1247,7 @@
           <div class="why-deco-dot deco-dot-r"></div>
           <div class="why-deco-dot deco-dot-b"></div>
           <div class="why-deco-dot deco-dot-l"></div>
-          <div class="why-deco-center">🏆</div>
+          <div class="why-deco-center"><img src="images/logo-01.png" alt="" class="why-deco-logo"></div>
         </div>
 
         <!-- features -->
@@ -1307,36 +1312,36 @@
 
         <!-- tall left feature image -->
         <div class="gallery-item tall fade-in">
-          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"
-               alt="BMW M4 detaliu lateral" loading="lazy" />
+          <img src="images/porsche_detailing_exterior.jpg"
+               alt="Porsche detailing exterior" loading="lazy" />
           <div class="gallery-overlay"><span>Detailing Exterior</span></div>
         </div>
 
         <!-- top-right 1 -->
         <div class="gallery-item fade-in" style="--delay:.05s">
-          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80"
-               alt="Polish profesional auto" loading="lazy" />
+          <img src="images/mercedes_gwagon_verde.jpg"
+               alt="Mercedes G-Wagon polish si ceruire" loading="lazy" />
           <div class="gallery-overlay"><span>Polish & Ceruire</span></div>
         </div>
 
         <!-- top-right 2 -->
         <div class="gallery-item fade-in" style="--delay:.10s">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80"
-               alt="Masina sport detaliu" loading="lazy" />
+          <img src="images/sport_luxury.jpg"
+               alt="Sport & Luxury auto" loading="lazy" />
           <div class="gallery-overlay"><span>Sport & Luxury</span></div>
         </div>
 
         <!-- bottom-right 1 -->
         <div class="gallery-item fade-in" style="--delay:.15s">
-          <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80"
-               alt="Interior auto curatat" loading="lazy" />
+          <img src="images/cosmetica_inerior1.jpg"
+               alt="Cosmetica interior auto" loading="lazy" />
           <div class="gallery-overlay"><span>Cosmetică Interior</span></div>
         </div>
 
         <!-- bottom-right 2 -->
         <div class="gallery-item fade-in" style="--delay:.20s">
-          <img src="https://images.unsplash.com/photo-1600706432502-77a0e2e32790?auto=format&fit=crop&w=800&q=80"
-               alt="Masina curatata la service" loading="lazy" />
+          <img src="images/igienizare_curatarev2.jpg"
+               alt="Igienizare si curatare auto" loading="lazy" />
           <div class="gallery-overlay"><span>Igienizare & Curățare</span></div>
         </div>
 

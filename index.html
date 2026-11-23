@@ -3,6 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Consimțământ (Google Consent Mode v2): totul refuzat până alege vizitatorul.
+       Scriptul Google Analytics se încarcă abia după „Accept”, mai jos, în consimtamant. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+  </script>
+
   <title>Prestige Detailing & Service | Deva</title>
   <link rel="icon" type="image/png" href="images/logo-01.png" />
   <link rel="apple-touch-icon" href="images/logo-01.png" />
@@ -68,16 +82,123 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&subset=latin,latin-ext&display=swap" rel="stylesheet" />
 
   <style>
+    /* Fonturile sunt găzduite în site (fonts/), nu la Google: vizitatorul nu e trimis la serverele Google */
+    /* Inter (variabil, 300–600), latin-ext */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url(fonts/inter-latin-ext.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Inter (variabil, 300–600), latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url(fonts/inter-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Rajdhani 300, latin-ext */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-ext-300.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Rajdhani 300, latin */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-300.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Rajdhani 400, latin-ext */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-ext-400.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Rajdhani 400, latin */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-400.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Rajdhani 500, latin-ext */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-ext-500.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Rajdhani 500, latin */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-500.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Rajdhani 600, latin-ext */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-ext-600.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Rajdhani 600, latin */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-600.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Rajdhani 700, latin-ext */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-ext-700.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* Rajdhani 700, latin */
+    @font-face {
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fonts/rajdhani-latin-700.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
 
     /* Romanian chars (Ț U+021A, ț U+021B, Ș U+0218, ș U+0219) fallback to Inter when Rajdhani lacks them */
     @font-face {
       font-family: 'Rajdhani';
-      src: local('Inter'), local('Segoe UI'), local('Arial');
+      src: url(fonts/inter-latin-ext.woff2) format('woff2'), local('Segoe UI'), local('Arial');
       unicode-range: U+0218-021B;
       font-weight: 100 900;
     }
@@ -1104,6 +1225,51 @@
       .google-badge { flex-direction: column; text-align: center; gap: .5rem; }
       .nav-logo-img { height: 56px; }
     }
+    /* ---- butoane mici (hartă, banner) ---- */
+    .btn-sm { font-size: .85rem; padding: .6em 1.3em; }
+
+    /* ---- hartă încărcată la clic ---- */
+    .map-placeholder {
+      min-height: 260px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 1rem; padding: 1.5rem; text-align: center;
+      background: var(--bg3);
+    }
+    .map-addr { font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--white); }
+    .map-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+    .map-note { font-size: .78rem; color: var(--gray2); }
+
+    /* ---- footer: linkuri legale ---- */
+    .footer-legal a, .link-btn { color: var(--gray2); }
+    .link-btn {
+      background: none; border: none; padding: 0; cursor: pointer;
+      font: inherit; text-decoration: underline; text-underline-offset: 2px;
+    }
+    .footer-legal a:hover, .link-btn:hover { color: var(--gold); }
+
+    /* ---- banner de consimțământ: mic, jos, nu blochează pagina ---- */
+    .cookie-banner {
+      position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1000;
+      max-width: 560px; margin-left: auto;
+      background: var(--bg2); color: var(--gray);
+      border: 1px solid var(--border); border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 1.1rem 1.25rem;
+      font-size: .88rem; line-height: 1.5;
+    }
+    .cookie-banner[hidden] { display: none; }
+    .cookie-banner a { color: var(--gold); }
+    .cookie-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .9rem; align-items: center; }
+    .cookie-actions .btn-gold, .cookie-actions .btn-outline { min-width: 120px; justify-content: center; }
+    .cookie-prefs { margin-top: .9rem; display: grid; gap: .6rem; }
+    .cookie-prefs[hidden], .cookie-actions [hidden] { display: none; }
+    .cookie-prefs label { display: flex; gap: .6rem; align-items: flex-start; cursor: pointer; }
+    .cookie-prefs input { margin-top: .25rem; accent-color: var(--gold); }
+    .cookie-prefs small { display: block; color: var(--gray2); }
+    @media (max-width: 600px) {
+      .cookie-banner { left: .5rem; right: .5rem; bottom: .5rem; }
+      .cookie-actions .btn-gold, .cookie-actions .btn-outline { flex: 1 1 40%; }
+    }
   </style>
 </head>
 <body>
@@ -1604,13 +1770,16 @@
           </div>
 
           <!-- map embed -->
-          <div class="map-wrap">
-            <iframe
-              src="https://maps.google.com/maps?q=Calea+Zarandului+146A,+Deva,+Romania&output=embed&z=16"
-              width="100%" height="260" style="border:0;display:block;"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              title="Locație Prestige Detailing & Service pe Google Maps">
-            </iframe>
+          <!-- Harta Google se încarcă doar la clic: altfel Google primește datele vizitatorului fără acordul lui -->
+          <div class="map-wrap" id="mapWrap">
+            <div class="map-placeholder">
+              <p class="map-addr">Calea Zarandului 146A, Deva</p>
+              <div class="map-actions">
+                <button type="button" class="btn-outline btn-sm" id="mapLoad">Arată harta</button>
+                <a class="btn-gold btn-sm" id="mapOpen" href="https://www.google.com/maps/search/?api=1&amp;query=Calea+Zarandului+146A,+Deva,+Romania" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+              </div>
+              <p class="map-note">Harta e de la Google și se încarcă doar dacă apeși pe buton.</p>
+            </div>
           </div>
         </div>
 
@@ -1716,6 +1885,7 @@
       <div class="footer-bottom">
         <p>&copy; 2024 Prestige Detailing &amp; Service. Toate drepturile rezervate.</p>
         <p>Calea Zarandului 146A, Deva &mdash; <a href="tel:0749152782">0749 152 782</a></p>
+        <p class="footer-legal"><a href="confidentialitate.html">Confidențialitate</a> &middot; <button type="button" class="link-btn" id="cookieSettings">Setări cookie-uri</button></p>
       </div>
     </div>
   </footer>
@@ -1943,6 +2113,8 @@
         var body = 'Bună ziua! Mă numesc ' + name + ', numărul meu de telefon este ' + phone + '.'
                  + (service ? ' Doresc serviciul: ' + service + '.' : '')
                  + (msg ? ' ' + msg : '');
+        // Doar serviciul ales ajunge în statistici; numele și telefonul nu se trimit niciodată
+        if (window.prdTrack) window.prdTrack('formular_whatsapp', { serviciu: service || 'nespecificat' });
         window.open('https://wa.me/40749152782?text=' + encodeURIComponent(body), '_blank');
 
         form.style.display = 'none';
@@ -1969,6 +2141,149 @@
       });
     }, { passive: true });
 
+  })();
+  </script>
+
+  <!-- ============================================================
+       CONSIMȚĂMÂNT + GOOGLE ANALYTICS 4
+  ============================================================ -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-uri" hidden>
+    <p>Folosim Google Analytics ca să vedem câți oameni intră pe site și ce îi interesează. Pornește doar dacă ești de acord. <a href="confidentialitate.html">Detalii</a></p>
+    <div class="cookie-prefs" id="cookiePrefs" hidden>
+      <label><input type="checkbox" id="ckStat" /> <span>Statistici<small>Google Analytics: câte vizite, din ce surse, ce pagini.</small></span></label>
+      <label><input type="checkbox" id="ckAds" /> <span>Reclame<small>Măsurarea campaniilor Google Ads: ce reclamă a adus un apel sau un mesaj.</small></span></label>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="btn-gold btn-sm" id="ckAccept">Accept</button>
+      <button type="button" class="btn-outline btn-sm" id="ckReject">Refuz</button>
+      <button type="button" class="link-btn" id="ckCustom">Aleg eu</button>
+      <button type="button" class="btn-outline btn-sm" id="ckSave" hidden>Salvez alegerea</button>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ID-ul de măsurare GA4 (G-...). Cât timp e gol, Google Analytics nu se încarcă deloc. */
+    var GA_ID = 'G-B7G4TJRCHC';
+    var KEY = 'prd_consimtamant';   // alegerea se ține în localStorage: strict necesar, nu cere acord
+    var VERSIUNE = 1;               // se crește când se schimbă ce cerem, ca bannerul să reapară
+
+    var banner = document.getElementById('cookieBanner');
+    var prefs  = document.getElementById('cookiePrefs');
+    var ckStat = document.getElementById('ckStat');
+    var ckAds  = document.getElementById('ckAds');
+    var btnSave = document.getElementById('ckSave');
+    var gaIncarcat = false;
+    var stare = null;
+
+    function citeste() {
+      try {
+        var s = JSON.parse(localStorage.getItem(KEY));
+        return (s && s.v === VERSIUNE) ? s : null;
+      } catch (e) { return null; }
+    }
+
+    function stergeCookieGA() {
+      var host = location.hostname.replace(/^www\./, '');
+      document.cookie.split(';').forEach(function (c) {
+        var nume = c.split('=')[0].trim();
+        if (/^_ga|^_gcl|^_gid/.test(nume)) {
+          ['', host, '.' + host].forEach(function (d) {
+            document.cookie = nume + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+          });
+        }
+      });
+    }
+
+    function incarcaGA() {
+      if (gaIncarcat || !GA_ID) return;
+      gaIncarcat = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+
+    function aplica(s) {
+      stare = s;
+      gtag('consent', 'update', {
+        analytics_storage:  s.stat ? 'granted' : 'denied',
+        ad_storage:         s.ads  ? 'granted' : 'denied',
+        ad_user_data:       s.ads  ? 'granted' : 'denied',
+        ad_personalization: s.ads  ? 'granted' : 'denied'
+      });
+      if (s.stat || s.ads) incarcaGA();
+    }
+
+    function salveaza(stat, ads) {
+      var s = { v: VERSIUNE, stat: !!stat, ads: !!ads, data: new Date().toISOString() };
+      try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {}
+      banner.hidden = true;
+      // Refuz sau retragere: ștergem orice cookie Google rămas; dacă scriptul rula deja, reîncărcăm pagina
+      if (!s.stat && !s.ads) {
+        stergeCookieGA();
+        if (gaIncarcat) { location.reload(); return; }
+      }
+      aplica(s);
+    }
+
+    function arataBanner(cuSetari) {
+      ckStat.checked = !!(stare && stare.stat);
+      ckAds.checked  = !!(stare && stare.ads);
+      prefs.hidden = !cuSetari;
+      btnSave.hidden = !cuSetari;
+      banner.hidden = false;
+    }
+
+    document.getElementById('ckAccept').addEventListener('click', function () { salveaza(true, true); });
+    document.getElementById('ckReject').addEventListener('click', function () { salveaza(false, false); });
+    document.getElementById('ckCustom').addEventListener('click', function () { arataBanner(true); });
+    btnSave.addEventListener('click', function () { salveaza(ckStat.checked, ckAds.checked); });
+    var linkSetari = document.getElementById('cookieSettings');
+    if (linkSetari) linkSetari.addEventListener('click', function () { arataBanner(true); });
+
+    var salvat = citeste();
+    if (salvat) aplica(salvat); else arataBanner(false);
+
+    /* ---- Evenimente de conversie: pleacă doar cu acord la statistici ---- */
+    window.prdTrack = function (nume, parametri) {
+      if (stare && stare.stat && gaIncarcat) gtag('event', nume, parametri || {});
+    };
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var href = a.getAttribute('href');
+      var unde = a.closest('footer') ? 'footer' : (a.closest('nav') ? 'meniu' : 'pagina');
+      if (href.indexOf('tel:') === 0) {
+        window.prdTrack('apel_telefon', { numar: href.replace('tel:', ''), locatie: unde });
+      } else if (href.indexOf('mailto:') === 0) {
+        window.prdTrack('click_email', { locatie: unde });
+      } else if (/facebook\.com|instagram\.com|tiktok\.com/.test(href)) {
+        window.prdTrack('click_social', { retea: (href.match(/(facebook|instagram|tiktok)/) || [])[1], locatie: unde });
+      } else if (a.id === 'mapOpen') {
+        window.prdTrack('deschide_harta', { locatie: unde });
+      }
+    });
+
+    /* ---- Harta Google, încărcată doar la cerere ---- */
+    var mapLoad = document.getElementById('mapLoad');
+    if (mapLoad) mapLoad.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=Calea+Zarandului+146A,+Deva,+Romania&output=embed&z=16';
+      f.width = '100%'; f.height = '260';
+      f.style.border = '0'; f.style.display = 'block';
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      f.title = 'Locație Prestige Detailing & Service pe Google Maps';
+      var wrap = document.getElementById('mapWrap');
+      wrap.innerHTML = '';
+      wrap.appendChild(f);
+    });
   })();
   </script>
 

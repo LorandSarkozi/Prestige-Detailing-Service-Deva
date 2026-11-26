@@ -623,6 +623,7 @@
       position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(201,162,39,.06) 0%, transparent 60%);
       opacity: 0; transition: opacity .3s;
+      pointer-events: none; /* stratul decorativ nu trebuie să prindă clicurile pe linkuri */
     }
     .service-card:hover {
       transform: translateY(-5px);
@@ -1271,6 +1272,7 @@
       .cookie-actions .btn-gold, .cookie-actions .btn-outline { flex: 1 1 40%; }
     }
     /* ---- legătura spre pagina serviciului ---- */
+    .service-title a, .service-more { position: relative; z-index: 1; }
     .service-title a { color: inherit; }
     .service-title a:hover { color: var(--gold); }
     .service-more {

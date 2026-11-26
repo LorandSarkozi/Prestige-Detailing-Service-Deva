@@ -241,6 +241,7 @@ img { max-width: 100%; display: block; }
 .check-list li { position: relative; padding-left: 1.8rem; }
 .check-list li::before { content: ''; position: absolute; left: 0; top: .62em; width: .7rem; height: .7rem; border-radius: 2px; background: var(--gold); transform: rotate(45deg); }
 .angle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.angle-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
 .angle-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.6rem; }
 .angle-card h3 { font-size: 1.35rem; color: var(--gold); margin-bottom: .6rem; text-transform: uppercase; letter-spacing: .05em; }
 .angle-card p { margin: 0; font-size: .97rem; }
@@ -254,6 +255,7 @@ img { max-width: 100%; display: block; }
 }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .two-col img { border-radius: var(--r); border: 1px solid var(--border); width: 100%; height: auto; aspect-ratio: 10 / 7; object-fit: cover; object-position: center 30%; }
+.two-col img.img-tall { aspect-ratio: 9 / 13; max-height: 640px; object-position: center; justify-self: center; width: auto; max-width: 100%; }
 .note { border-left: 3px solid var(--gold); background: rgba(201,162,39,.06); padding: 1rem 1.2rem; border-radius: 0 var(--r) var(--r) 0; max-width: 720px; }
 
 /* ---- întrebări frecvente ---- */
@@ -310,7 +312,7 @@ footer { background: var(--bg2); border-top: 1px solid rgba(255,255,255,.05); pa
 @media (max-width: 900px) {
   .srv-hero-grid, .two-col { grid-template-columns: 1fr; gap: 2.2rem; }
   .srv-hero-img img { aspect-ratio: 4 / 3; }
-  .angle-grid { grid-template-columns: 1fr; }
+  .angle-grid, .angle-grid.cols-2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {

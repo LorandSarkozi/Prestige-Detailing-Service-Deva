@@ -18,8 +18,8 @@
   </script>
 
   <title>Prestige Detailing & Service | Deva</title>
-  <link rel="icon" type="image/png" href="images/logo-01.png" />
-  <link rel="apple-touch-icon" href="images/logo-01.png" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
   <meta name="description" content="Detailing și service auto în Deva. Polish, ceruire, cosmetică interior, diagnoză și mecanică. Peste 277 clienți mulțumiți cu 4.6★ pe Google. Vino să vezi diferența." />
   <link rel="canonical" href="https://prestigedetailing.ro/" />
 
@@ -1270,6 +1270,15 @@
       .cookie-banner { left: .5rem; right: .5rem; bottom: .5rem; }
       .cookie-actions .btn-gold, .cookie-actions .btn-outline { flex: 1 1 40%; }
     }
+    /* ---- legătura spre pagina serviciului ---- */
+    .service-title a { color: inherit; }
+    .service-title a:hover { color: var(--gold); }
+    .service-more {
+      display: inline-block; margin-top: 1rem;
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: .9rem;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--gold);
+    }
+    .service-more:hover { color: var(--gold-lt); }
   </style>
 </head>
 <body>
@@ -1277,7 +1286,7 @@
   <nav id="navbar" aria-label="Navigare principală">
     <div class="container nav-inner">
       <a href="#hero" class="nav-logo" aria-label="Prestige Detailing & Service - Acasă">
-        <img src="images/logo-01.png" alt="Prestige Detailing & Service" class="nav-logo-img">
+        <img src="images/logo-nav.png" alt="Prestige Detailing & Service" class="nav-logo-img" width="400" height="267">
       </a>
 
       <ul class="nav-links" role="list">
@@ -1424,8 +1433,9 @@
         <article class="service-card fade-in" style="--delay:.10s">
           <span class="service-num" aria-hidden="true">02</span>
           <div class="service-icon" aria-hidden="true">⚙️</div>
-          <h3 class="service-title">Geometrie Roți</h3>
-          <p class="service-desc">Reglaj precis al geometriei cu echipamente moderne 3D. Siguranță maximă și uzură uniformă a anvelopelor.</p>
+          <h3 class="service-title"><a href="servicii/geometrie-roti/">Geometrie Roți</a></h3>
+          <p class="service-desc">Reglaj precis al geometriei pe stand 4D. Siguranță maximă și uzură uniformă a anvelopelor.</p>
+          <a class="service-more" href="servicii/geometrie-roti/">Detalii despre geometrie &rarr;</a>
         </article>
 
         <!-- 3 -->
@@ -1486,7 +1496,7 @@
           <div class="why-deco-dot deco-dot-r"></div>
           <div class="why-deco-dot deco-dot-b"></div>
           <div class="why-deco-dot deco-dot-l"></div>
-          <div class="why-deco-center"><img src="images/logo-01.png" alt="" class="why-deco-logo"></div>
+          <div class="why-deco-center"><img src="images/logo-nav.png" alt="" class="why-deco-logo" loading="lazy"></div>
         </div>
 
         <!-- features -->
@@ -1873,7 +1883,7 @@
           <h5>Servicii</h5>
           <ul>
             <li><a href="#services">Diagnoză Auto</a></li>
-            <li><a href="#services">Geometrie Roți</a></li>
+            <li><a href="servicii/geometrie-roti/">Geometrie Roți</a></li>
             <li><a href="#services">Mecanică Generală</a></li>
             <li><a href="#services">Electrică Auto</a></li>
             <li><a href="#services">Cosmetică &amp; Polish</a></li>
@@ -2144,132 +2154,12 @@
   })();
   </script>
 
-  <!-- ============================================================
-       CONSIMȚĂMÂNT + GOOGLE ANALYTICS 4
-  ============================================================ -->
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-uri" hidden>
-    <p>Folosim Google Analytics ca să vedem câți oameni intră pe site și ce îi interesează. Pornește doar dacă ești de acord. <a href="confidentialitate.html">Detalii</a></p>
-    <div class="cookie-prefs" id="cookiePrefs" hidden>
-      <label><input type="checkbox" id="ckStat" /> <span>Statistici<small>Google Analytics: câte vizite, din ce surse, ce pagini.</small></span></label>
-      <label><input type="checkbox" id="ckAds" /> <span>Reclame<small>Măsurarea campaniilor Google Ads: ce reclamă a adus un apel sau un mesaj.</small></span></label>
-    </div>
-    <div class="cookie-actions">
-      <button type="button" class="btn-gold btn-sm" id="ckAccept">Accept</button>
-      <button type="button" class="btn-outline btn-sm" id="ckReject">Refuz</button>
-      <button type="button" class="link-btn" id="ckCustom">Aleg eu</button>
-      <button type="button" class="btn-outline btn-sm" id="ckSave" hidden>Salvez alegerea</button>
-    </div>
-  </div>
+  <!-- Consimțământ + Google Analytics 4: comun tuturor paginilor -->
+  <script src="js/consimtamant.js"></script>
 
   <script>
   (function () {
     'use strict';
-
-    /* ID-ul de măsurare GA4 (G-...). Cât timp e gol, Google Analytics nu se încarcă deloc. */
-    var GA_ID = 'G-B7G4TJRCHC';
-    var KEY = 'prd_consimtamant';   // alegerea se ține în localStorage: strict necesar, nu cere acord
-    var VERSIUNE = 1;               // se crește când se schimbă ce cerem, ca bannerul să reapară
-
-    var banner = document.getElementById('cookieBanner');
-    var prefs  = document.getElementById('cookiePrefs');
-    var ckStat = document.getElementById('ckStat');
-    var ckAds  = document.getElementById('ckAds');
-    var btnSave = document.getElementById('ckSave');
-    var gaIncarcat = false;
-    var stare = null;
-
-    function citeste() {
-      try {
-        var s = JSON.parse(localStorage.getItem(KEY));
-        return (s && s.v === VERSIUNE) ? s : null;
-      } catch (e) { return null; }
-    }
-
-    function stergeCookieGA() {
-      var host = location.hostname.replace(/^www\./, '');
-      document.cookie.split(';').forEach(function (c) {
-        var nume = c.split('=')[0].trim();
-        if (/^_ga|^_gcl|^_gid/.test(nume)) {
-          ['', host, '.' + host].forEach(function (d) {
-            document.cookie = nume + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
-          });
-        }
-      });
-    }
-
-    function incarcaGA() {
-      if (gaIncarcat || !GA_ID) return;
-      gaIncarcat = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
-      document.head.appendChild(s);
-      gtag('js', new Date());
-      gtag('config', GA_ID);
-    }
-
-    function aplica(s) {
-      stare = s;
-      gtag('consent', 'update', {
-        analytics_storage:  s.stat ? 'granted' : 'denied',
-        ad_storage:         s.ads  ? 'granted' : 'denied',
-        ad_user_data:       s.ads  ? 'granted' : 'denied',
-        ad_personalization: s.ads  ? 'granted' : 'denied'
-      });
-      if (s.stat || s.ads) incarcaGA();
-    }
-
-    function salveaza(stat, ads) {
-      var s = { v: VERSIUNE, stat: !!stat, ads: !!ads, data: new Date().toISOString() };
-      try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {}
-      banner.hidden = true;
-      // Refuz sau retragere: ștergem orice cookie Google rămas; dacă scriptul rula deja, reîncărcăm pagina
-      if (!s.stat && !s.ads) {
-        stergeCookieGA();
-        if (gaIncarcat) { location.reload(); return; }
-      }
-      aplica(s);
-    }
-
-    function arataBanner(cuSetari) {
-      ckStat.checked = !!(stare && stare.stat);
-      ckAds.checked  = !!(stare && stare.ads);
-      prefs.hidden = !cuSetari;
-      btnSave.hidden = !cuSetari;
-      banner.hidden = false;
-    }
-
-    document.getElementById('ckAccept').addEventListener('click', function () { salveaza(true, true); });
-    document.getElementById('ckReject').addEventListener('click', function () { salveaza(false, false); });
-    document.getElementById('ckCustom').addEventListener('click', function () { arataBanner(true); });
-    btnSave.addEventListener('click', function () { salveaza(ckStat.checked, ckAds.checked); });
-    var linkSetari = document.getElementById('cookieSettings');
-    if (linkSetari) linkSetari.addEventListener('click', function () { arataBanner(true); });
-
-    var salvat = citeste();
-    if (salvat) aplica(salvat); else arataBanner(false);
-
-    /* ---- Evenimente de conversie: pleacă doar cu acord la statistici ---- */
-    window.prdTrack = function (nume, parametri) {
-      if (stare && stare.stat && gaIncarcat) gtag('event', nume, parametri || {});
-    };
-
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest ? e.target.closest('a[href]') : null;
-      if (!a) return;
-      var href = a.getAttribute('href');
-      var unde = a.closest('footer') ? 'footer' : (a.closest('nav') ? 'meniu' : 'pagina');
-      if (href.indexOf('tel:') === 0) {
-        window.prdTrack('apel_telefon', { numar: href.replace('tel:', ''), locatie: unde });
-      } else if (href.indexOf('mailto:') === 0) {
-        window.prdTrack('click_email', { locatie: unde });
-      } else if (/facebook\.com|instagram\.com|tiktok\.com/.test(href)) {
-        window.prdTrack('click_social', { retea: (href.match(/(facebook|instagram|tiktok)/) || [])[1], locatie: unde });
-      } else if (a.id === 'mapOpen') {
-        window.prdTrack('deschide_harta', { locatie: unde });
-      }
-    });
-
     /* ---- Harta Google, încărcată doar la cerere ---- */
     var mapLoad = document.getElementById('mapLoad');
     if (mapLoad) mapLoad.addEventListener('click', function () {
